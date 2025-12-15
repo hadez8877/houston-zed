@@ -5,8 +5,12 @@
 	"description": "A theme featuring cool blues, minty greens, and soft purples",
 	"private": true,
 	"scripts": {
+		"lint": "prettier --check .",
+		"format": "prettier --write .",
+		"fmt": "pnpm run format",
+		"prepack": "pnpm run lint && pnpm run test",
 		"changelog": "git cliff --prepend CHANGELOG.md -u -c cliff.toml",
-		"prepare": "husky"
+		"prepare": "is-ci || husky"
 	},
 	"keywords": [],
 	"author": "Fabricio Pasapera Viera (@Hadez)",
